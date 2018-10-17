@@ -1,0 +1,23 @@
+table, tr, td {
+  border: solid 2px black;
+  border-collapse: collapse;
+}
+td {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+tr:nth-of-type(even) td:nth-of-type(odd), tr:nth-of-type(odd) td:nth-of-type(even) {
+  background: #000;
+  color: #FFF;
+}
+.soldier {
+  content: '';
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+}
