@@ -1,0 +1,18 @@
+.inlineStyle {
+    display: inline-block !important;
+}
+#left, #right {
+    position: relative;
+    height: 100px;
+    width: 200px;
+}
+#left span, #right span {
+    width: 100px;
+}
+#left span {
+    margin-left: 8px;
+}
+#right {
+    top: -100px;
+    left: 200px;
+}
