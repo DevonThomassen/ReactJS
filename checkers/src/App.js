@@ -12,13 +12,20 @@ function Pieces(props) {
 
     if (((even === true && black === true) || (even === true && white === true)) &&
         (y === 'A' || y === 'C' || y === 'E' || y === 'G')) {
-        return a = <td><span key={"span" + pieceLocation}
-                             className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span></td>;
+        return a =
+            <td key={"td" + pieceLocation}>
+                <span key={"span" + pieceLocation}
+                      className={black ? "soldier black" : "soldier white"}>{pieceLocation}
+                </span>
+            </td>;
     }
-    else if (((even === false && black === true) || (even === false && white === true)) && 
+    else if (((even === false && black === true) || (even === false && white === true)) &&
         (y === 'B' || y === 'D' || y === 'F' || y === 'H')) {
-        return a = <td key={"span" + pieceLocation} id={pieceLocation}><span
-            className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span></td>;
+        return a =
+            <td key={"td" + pieceLocation}>
+                <span key={"span " + pieceLocation}
+                      className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span>
+            </td>;
     }
     return a;
 }
@@ -46,7 +53,7 @@ class App extends Component {
                 {this.state.v.map(rowV => (
                     <tr key={"row" + rowV}>
                         {this.state.h.map(rowH => (
-                            <Pieces location={rowH + rowV}/>))}
+                            <Pieces key={rowH + rowV} location={rowH + rowV}/>))}
                     </tr>
                 ))}
             </table>
