@@ -10,15 +10,15 @@ function Pieces(props) {
     let black = blackLocation(z);
     let white = whiteLocation(z);
 
-    if ((even === true && black === true) || (even === true && white === true)) {
-        if (y === 'A' || y === 'C' || y === 'E' || y === 'G') {
-            return a = <td><span key={"span" + pieceLocation} className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span></td>;
-        }
+    if (((even === true && black === true) || (even === true && white === true)) &&
+        (y === 'A' || y === 'C' || y === 'E' || y === 'G')) {
+        return a = <td><span key={"span" + pieceLocation}
+                             className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span></td>;
     }
-    else if ((even === false && black === true) || (even === false && white === true)) {
-        if (y === 'B' || y === 'D' || y === 'F' || y === 'H') {
-            return a = <td key={"span" + pieceLocation}><span className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span></td>;
-        }
+    else if (((even === false && black === true) || (even === false && white === true)) && 
+        (y === 'B' || y === 'D' || y === 'F' || y === 'H')) {
+        return a = <td key={"span" + pieceLocation} id={pieceLocation}><span
+            className={black ? "soldier black" : "soldier white"}>{pieceLocation}</span></td>;
     }
     return a;
 }
