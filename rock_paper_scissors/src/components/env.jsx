@@ -9,17 +9,17 @@ class Env extends Component {
     player: NaN,
     bot: NaN,
   };
-  getItem = voorwerp => {
+  getItem = item => {
     let bot = Math.floor(Math.random() * 3);
     let botPick = items[bot].name;
-    this.setState({player: voorwerp.name});
+    this.setState({player: item.name});
     this.setState({bot: botPick});
-    this.bepaaldWinnaar(voorwerp, botPick);
+    this.determinedWinner(item, botPick);
   };
-  bepaaldWinnaar = (voorwerp, botPick) => {
+  determinedWinner = (item, botPick) => {
     let status;
-    if (voorwerp.winsFrom === botPick) status = 'Victory Royale🎉';
-    else if (voorwerp.name === botPick) status = 'That was an epic fight, but nobody won😤';
+    if (item.winsFrom === botPick) status = 'Victory Royale🎉';
+    else if (item.name === botPick) status = 'That was an epic fight, but nobody won😤';
     else status = 'Hard fight, but you lost. Don\'t give up!😤';
     this.setState({status: status});
   };
@@ -29,9 +29,9 @@ class Env extends Component {
       <React.Fragment>
         <h1>Rock Paper Scissors</h1>
         <div className='buttons'>
-          {items.map(voorwerp => (
-            <button key={voorwerp.name} onClick={() => this.getItem(voorwerp)}>
-              {voorwerp.name}
+          {items.map(item => (
+            <button key={item.name} onClick={() => this.getItem(item)}>
+              {item.name}
             </button>
           ))}
         </div>
