@@ -12,8 +12,8 @@ class Env extends Component {
   getItem = item => {
     let bot = Math.floor(Math.random() * 3);
     let botPick = items[bot].name;
-    this.setState({player: item.name});
-    this.setState({bot: botPick});
+    this.setState({});
+    this.setState({player: item.name, bot: botPick});
     this.determinedWinner(item, botPick);
   };
   determinedWinner = (item, botPick) => {
